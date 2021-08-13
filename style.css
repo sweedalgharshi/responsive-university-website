@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+/* styling for background image */
+.header {
+  min-height: 100vh; /*this property will help the div tag to occupy the whole window screen height  */
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url("./images/banner.png");
+  background-position: center;
+  background-size: cover;
+}
+/* styling for navigation bar */
+nav {
+  display: flex; /* this property will bring both logo image and list items side by side*/
+  padding: 2% 6%;
+  justify-content: space-between; /*this bring space between logo image and list items*/
+  align-items: center;
+}
+
+nav img {
+  width: 150px; /*to make the logo size smaller*/
+}
+
+/*styling the list items */
+.nav-links {
+  flex: 1; /*its means flex:1 1 0*/
+  text-align: right;
+}
+
+.nav-links ul li {
+  position: relative;
+  list-style: none;
+  display: inline-block; /*this will bring all the list items side by side*/
+  padding: 8px 12px;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background: #f44336;
+  transition: 0.5s;
+  margin: auto;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+/* end of navigation bar styling */
+
+/*start of section (two) which are courses*/
+
+.text-box {
+  width: 90%; /*this means the div tag will occupy 90% of the width*/
+  color: #fff;
+  position: absolute; /*using position absolute the text will be place in center*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+
+.text-box p {
+  font-size: 14px;
+  margin: 10px 0 40px;
+  color: #fff;
+}
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 18px 24px;
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+}
+
+.hero-btn:hover {
+  border: 1px solid #f44336;
+  background: #f44336;
+  transition: 1s;
+}
+nav .fas {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    height: 100vh;
+    width: 200px;
+    background: #f44336;
+    z-index: 2; /*this property will help to place all the content behind the menu bar when the screen size is smaller*/
+    text-align: left;
+    transition: 1s;
+  }
+  nav .fas {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+  .nav-links ul {
+    padding: 20px;
+  }
+}
+
+/* courses section styling */
+
+.courses {
+  width: 80%;
+  margin: auto; /*this will place the div tag in center */
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 600;
+}
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+
+.course-col {
+  flex-basis: 31%; /*this tag will distribute the three contents in three equal parts*/
+  border-radius: 10px;
+  background: #fff3f3;
+  margin-bottom: 20px;
+  padding: 20px 15px;
+  box-sizing: border-box; /*this property will help the three boxes not to stick each other*/
+  transition: 0.5s;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.course-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/*end of courses section*/
+
+/*start styling for campus section*/
+
+.campus {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  /* padding-bottom: 100px; */
+}
+
+.campus-col {
+  flex-basis: 32%;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.campus-col img {
+  width: 100%;
+  display: block; /*by applying this the red color of layer class will not overflow outside*/
+}
+
+.layer {
+  width: 100%;
+  height: 100%; /*both height and width will cover the whole image*/
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.layer:hover {
+  background: rgba(226, 0, 0, 0.7);
+}
+
+.layer h3 {
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+/*we are hovering h3 on .layer class*/
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+/*styling of campus section is done*/
+
+/*styling of facilities sections starts from here*/
+
+.facilities {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.facilities-col {
+  flex-basis: 31%;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.facilities-col img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.facilities-col p {
+  padding: 0;
+}
+
+.facilities-col h3 {
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.testimonials {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  padding-top: 100px;
+}
+.testimonial-col {
+  flex-basis: 44%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 35px;
+  cursor: pointer;
+  text-align: left;
+  background: #eebdbd;
+  margin-left: 10px;
+  display: flex;
+}
+
+.testimonial-col img {
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.testimonial-col p {
+  padding: 0;
+}
+
+.testimonial-col h3 {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.testimonial-col .fas,
+.far {
+  color: #f44336;
+}
+
+@media (max-width: 700px) {
+  .testimonial-col img {
+    margin-left: 0px;
+    margin-right: 15px;
+  }
+}
+
+/*styling for the call for action section starts from here*/
+
+.cta {
+  width: 80%;
+  margin: 100px auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./images/banner2.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  border-radius: 5px;
+  padding: 100px 0;
+}
+
+.cta h1 {
+  color: #fff;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .cta h1 {
+    font-size: 24px;
+  }
+}
+
+/*about us section sytling*/
+
+.footer {
+  width: 100%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.footer h4 {
+  font-size: 40px;
+}
+
+.icons .fab {
+  color: #f44336;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+h3 {
+  color: #777;
+}
+h3 .fas {
+  color: #f44336;
+  margin: 0 15px;
+  padding: 15px 0;
+}
+
+@media (max-width: 700px) {
+  h3 {
+    font-size: 14px;
+  }
+}
+
+/*about us section styling*/
+
+.sub-header {
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(rgba(2, 9, 30, 0.7), rgba(2, 9, 30, 0.7)),
+    url("./images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.sub-header h1 {
+  margin-top: 100px;
+  color: #fff;
+}
+
+.about-us {
+  margin: auto;
+  width: 80%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.about-us-col {
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+
+.about-us-col img {
+  width: 100%;
+}
+
+.about-us h1 {
+  padding-top: 0px;
+}
+
+.about-us p {
+  padding: 15px 0 25px;
+}
+
+.red-btn {
+  background: transparent;
+  border: 1px solid #f44336;
+  color: #f44336;
+}
+
+.red-btn:hover {
+  color: #fff;
+}
+
+/*blog content section styling */
+
+.blog-content {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.blog-left {
+  flex-basis: 65%;
+}
+.blog-left img {
+  width: 100%;
+}
+.blog-left h2 {
+  color: #222;
+  margin: 30px 0;
+  font-weight: 600;
+}
+
+.blog-left p {
+  padding: 0px;
+  font-size: 15px;
+}
+
+.blog-right {
+  flex-basis: 32%;
+}
+
+.blog-right h3 {
+  font-size: 16px;
+  background: #f44336;
+  color: #fff;
+  padding: 7px 0;
+  margin-bottom: 15px;
+}
+.blog-right div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #555;
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+
+.comment-box {
+  border: 1px solid #ccc;
+  padding: 25px 5px;
+  margin: 25px 0;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  margin: 15px 0;
+}
+.comment-box h3 {
+  text-align: left;
+}
+
+.comment-form button {
+  margin: 10px 0;
+}
+
+@media (max-width: 700px) {
+  .sub-header h1 {
+    font-size: 24px;
+  }
+}
+
+/*location styling starts from here*/
+
+.location {
+  width: 80%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.location iframe {
+  width: 100%;
+}
+
+/*contact us styling starts from here*/
+
+.contact-us {
+  width: 80%;
+  margin: auto;
+}
+
+.contact-col {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+}
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-col div .fas {
+  color: #f44336;
+  font-size: 28px;
+  margin: 10px;
+  margin-right: 40px;
+}
+
+.contact-col div p {
+  padding: 0;
+}
+
+.contact-col div h5 {
+  font-size: 20px;
+  color: #555;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contact-col input,
+.contact-col textarea {
+  flex-basis: 48%;
+  border: 1px solid #ccc;
+  margin-bottom: 17px;
+  padding: 15px;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
